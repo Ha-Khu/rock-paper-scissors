@@ -1,15 +1,12 @@
 
+function getComputerChoice() {
+    let random = ["Rock", "Paper", "Scissors"];
+    return random[Math.floor(Math.random()* random.length)];
+}
+
 
 function game(){ 
     for (let oneRound = 0; oneRound < 5; oneRound++) {
-
-
-
-    function getComputerChoice() {
-        let random = ["Rock", "Paper", "Scissors"];
-        return random[Math.floor(Math.random()* random.length)];
-    }
-
 
     function oneRound(playerSelection, ComputerSelection) {
         if (playerSelection == "Rock" && ComputerSelection == "Scissors") {
