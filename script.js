@@ -6,25 +6,37 @@ function getComputerChoice() {
 
 
 function game(){ 
+    let playerScore = 1;
+    let computerScore = 1;
+    let draw = 1;
+
     for (let oneRound = 0; oneRound < 5; oneRound++) {
+    
 
     function oneRound(playerSelection, ComputerSelection) {
         if (playerSelection == "Rock" && ComputerSelection == "Scissors") {
-            return "You win";
+            return "You win" + " " +
+            playerScore++;
         } else if (playerSelection == "Scissors" && ComputerSelection == "Paper") {
-            return "You win";
+            return "You win" + " " +
+            playerScore++;
         } else if (playerSelection == "Paper" && ComputerSelection == "Rock") {
-            return "You win";
+            return "You win" + " " +
+            playerScore++;
         } else if (playerSelection == "Rock" && ComputerSelection == "Paper") {
-            return "You lose";
+            return "You lose" + " " +
+            computerScore++;
         } else if (playerSelection == "Scissors" && ComputerSelection == "Rock") {
-            return "You lose";
+            return "You lose" + " " +
+            computerScore++;
         } else if (playerSelection == "Paper" && ComputerSelection == "Scissors") {
-            return "You lose";
+            return "You lose" + " " +
+            computerScore++;
         } else {
-            return "Draw"
+            return "Draw" + " " +
+            draw ++;
         }
-
+        
     }
 
     function formatString(str) {
@@ -40,6 +52,13 @@ function game(){
 
     }
 
+    if (playerScore > computerScore && playerScore > draw) {
+        return "You won the game"
+    } else if (playerScore < computerScore && draw < computerScore) {
+        return "You lost the game"
+    } else {
+        return "You draw with the computer"
+    }
 }
 
 
