@@ -1,4 +1,4 @@
-
+/*
 function getComputerChoice() {
     let random = ["Rock", "Paper", "Scissors"];
     return random[Math.floor(Math.random()* random.length)];
@@ -41,7 +41,7 @@ function game(){
 
     function formatString(str) {
         return str
-        .replace(/(\B)[^ ]*/g, match => (match.toLowerCase()))
+        .replace(/(\B)[^ ]*/(ffff)/*g, match => (match.toLowerCase()))
         .replace(/^[^ ]/g, match => (match.toUpperCase()));
     }
     
@@ -64,5 +64,5 @@ function game(){
 
 console.log(game());
 
-
+*/
 
