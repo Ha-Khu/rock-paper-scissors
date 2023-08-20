@@ -12,11 +12,11 @@
     <header>
         <div class="container">
             <div class="score-container">
-            <div class="player-score-displayer">0</div>
+            <div id="player-score" class="player-score-displayer">0</div>
             <p class="player-score">YOUR SCORE</p>
             </div>
             <div class="score-container">
-            <div class="pc-score-displayer">0</div>
+            <div id="pc-score" class="pc-score-displayer">0</div>
             <p class="pc-score">PC SCORE</p>
             </div>
         </div>
@@ -24,16 +24,16 @@
 
     <main>
         <section class="reset-btn">
-            <button class="reset-game">RESET GAME</button>
+            <button id="reset-game" class="reset-game">RESET GAME</button>
         </section>
         <section class="status-displayer">
-            <p>dd</p>
-            <p>dd</p>
+            <p id="game-status">dd</p>
+            <p id="round-status"></p>
         </section>
         <section class="game">
-            <button class="rock"><i class="fa-regular fa-hand-back-fist"></i></button>
-            <button class="paper"><i class="fa-regular fa-hand"></i></button>
-            <button class="scissors"><i class="fa-regular fa-hand-scissors"></i></button>
+            <button id="rock" class="rock"><i class="fa-regular fa-hand-back-fist"></i></button>
+            <button id="paper" class="paper"><i class="fa-regular fa-hand"></i></button>
+            <button id="scissors" class="scissors"><i class="fa-regular fa-hand-scissors"></i></button>
         </section>
     </main>
 

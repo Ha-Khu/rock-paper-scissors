@@ -1,68 +1,77 @@
-/*
+
 function getComputerChoice() {
     let random = ["Rock", "Paper", "Scissors"];
     return random[Math.floor(Math.random()* random.length)];
 }
-
-
-function game(){ 
-    let playerScore = 1;
-    let computerScore = 1;
-    let draw = 1;
-
-    for (let oneRound = 0; oneRound < 5; oneRound++) {
     
 
-    function oneRound(playerSelection, ComputerSelection) {
-        if (playerSelection == "Rock" && ComputerSelection == "Scissors") {
-            return "You win" + " " +
-            playerScore++;
-        } else if (playerSelection == "Scissors" && ComputerSelection == "Paper") {
-            return "You win" + " " +
-            playerScore++;
-        } else if (playerSelection == "Paper" && ComputerSelection == "Rock") {
-            return "You win" + " " +
-            playerScore++;
-        } else if (playerSelection == "Rock" && ComputerSelection == "Paper") {
-            return "You lose" + " " +
-            computerScore++;
-        } else if (playerSelection == "Scissors" && ComputerSelection == "Rock") {
-            return "You lose" + " " +
-            computerScore++;
-        } else if (playerSelection == "Paper" && ComputerSelection == "Scissors") {
-            return "You lose" + " " +
-            computerScore++;
+const player_score_DOM = document.getElementById("player-score");
+const pc_score_DOM = document.getElementById("pc-score");
+const reset_game_DOM = document.getElementById("reset-game");
+const game_status_DOM = document.getElementById("game-status");
+const round_status_DOM = document.getElementById("round-status");
+const rock_DOM = document.getElementById("rock");
+const paper_DOM = document.getElementById("paper");
+const scissors_DOM = document.getElementById("scissors");
+
+PlayerScore = 0
+ComputerScore = 0 
+
+
+    function game(PlayerSelection) {
+        let ComputerSelection = getComputerChoice();
+        if (PlayerSelection == "Rock" && ComputerSelection == "Paper") {
+            lose(ComputerScore += 1) 
+        } else if (PlayerSelection == "Rock" && ComputerSelection == "Scissors") {
+            win(PlayerScore += 1)
+        } else if (PlayerSelection == "Paper" && ComputerSelection == "Rock") {
+            win()
+        } else if (PlayerSelection == "Paper" && ComputerSelection == "Scissors") {
+            lose()
+        } else if (PlayerSelection == "Scissors" && ComputerSelection == "Rock") {
+            lose()
+        } else if (PlayerSelection == "Scissors" && ComputerSelection == "Paper") {
+            win()
         } else {
-            return "Draw" + " " +
-            draw ++;
+            draw()
         }
         
+    } 
+
+
+
+    function win() {
+        player_score_DOM.innerHTML = PlayerScore
+        round_status_DOM.innerHTML = "You won against computer this round"
     }
 
-    function formatString(str) {
-        return str
-        .replace(/(\B)[^ ]*/(ffff)/*g, match => (match.toLowerCase()))
-        .replace(/^[^ ]/g, match => (match.toUpperCase()));
+    function lose() {
+        pc_score_DOM.innerHTML = ComputerScore
+        round_status_DOM.innerHTML = "You lost against computer this round"
+    }
+
+    function draw() {
+        round_status_DOM.innerHTML = "You draw with the computer this round"
+    }
+
+    function choosing() {
+        rock_DOM.addEventListener("click",  function() {
+            game("Rock")
+        })
+    
+        paper_DOM.addEventListener("click", function() {
+            game("Paper")
+        })
+    
+        scissors_DOM.addEventListener("click", function() {
+            game("Scissors")
+        })
     }
     
-
-    let playerSelection = formatString(prompt("Choose your selection"));
-    let ComputerSelection = getComputerChoice();
-    console.log(oneRound(playerSelection, ComputerSelection));
-
-    }
-
-    if (playerScore > computerScore && playerScore > draw) {
-        return "You won the game"
-    } else if (playerScore < computerScore && draw < computerScore) {
-        return "You lost the game"
-    } else {
-        return "You draw with the computer"
-    }
-}
+choosing()
 
 
-console.log(game());
 
-*/
+
+
 
