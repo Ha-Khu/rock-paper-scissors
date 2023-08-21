@@ -17,9 +17,9 @@ PlayerScore = 0
 ComputerScore = 0 
 
 function resetGame() {
-    player_score_DOM.innerHTML = "0"
-    pc_score_DOM.innerHTML = "0"
-    round_status_DOM.innerHTML = ""
+    player_score_DOM.textContent = "0"
+    pc_score_DOM.textContent = "0"
+    round_status_DOM.textContent = ""
     PlayerScore = 0
     ComputerScore = 0
 }
@@ -55,32 +55,31 @@ reset_game_DOM.addEventListener("click", function() {
 
     function win(PlayerSelection,ComputerSelection) {
         PlayerScore++
-        player_score_DOM.innerHTML = PlayerScore
-        round_status_DOM.innerHTML = PlayerSelection + " beats " + ComputerSelection + " you won this round"
+        player_score_DOM.textContent = PlayerScore
+        round_status_DOM.textContent = PlayerSelection + " beats " + ComputerSelection + " you won this round"
         getWinner() 
     }
 
     function lose(PlayerSelection,ComputerSelection) {
         ComputerScore++
-        pc_score_DOM.innerHTML = ComputerScore
-        round_status_DOM.innerHTML = ComputerSelection + " beats " + PlayerSelection + " you lost this round"
+        pc_score_DOM.textContent = ComputerScore
+        round_status_DOM.textContent = ComputerSelection + " beats " + PlayerSelection + " you lost this round"
         getWinner()
     }
 
     function draw() {
-        round_status_DOM.innerHTML = "You draw with the computer this round"
+        round_status_DOM.textContent = "You draw with the computer this round"
     }
 
     function getWinner() {
         if (PlayerScore === 5) {
             round_status_DOM.textContent = "YEY YOU WON THE WHOLE GAME"
-            PlayerScore = PlayerScore 
         } else if (ComputerScore === 5) {
             round_status_DOM.textContent = "OUU YOU LOST THE GAME"
-            
         }
     }
 
+    
 
     function choosing() {
         rock_DOM.addEventListener("click",  function() {
