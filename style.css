@@ -69,6 +69,11 @@ main {
     color: #373E40;
 }
 
+#round-status {
+    font-size: 50px;
+    font-weight: 900;
+}
+
 .status-displayer {
     margin-top: 20px;
     height: 100px;
