@@ -22,6 +22,9 @@ function resetGame() {
     round_status_DOM.textContent = ""
     PlayerScore = 0
     ComputerScore = 0
+    document.getElementById("rock").disabled = false
+    document.getElementById("paper").disabled = false
+    document.getElementById("scissors").disabled = false
 }
 
 reset_game_DOM.addEventListener("click", function() {
@@ -57,25 +60,34 @@ reset_game_DOM.addEventListener("click", function() {
         PlayerScore++
         player_score_DOM.textContent = PlayerScore
         round_status_DOM.textContent = PlayerSelection + " beats " + ComputerSelection + " you won this round"
-        getWinner() 
+        getWinner(PlayerScore, ComputerScore) 
     }
 
     function lose(PlayerSelection,ComputerSelection) {
         ComputerScore++
         pc_score_DOM.textContent = ComputerScore
         round_status_DOM.textContent = ComputerSelection + " beats " + PlayerSelection + " you lost this round"
-        getWinner()
+        getWinner(PlayerScore, ComputerScore)
     }
 
     function draw() {
         round_status_DOM.textContent = "You draw with the computer this round"
     }
 
-    function getWinner() {
+    function getWinner(PlayerScore, ComputerScore) {
         if (PlayerScore === 5) {
-            round_status_DOM.textContent = "YEY YOU WON THE WHOLE GAME"
-        } else if (ComputerScore === 5) {
-            round_status_DOM.textContent = "OUU YOU LOST THE GAME"
+            round_status_DOM.textContent = "WINNER WINNER CHICKEN DINNER"
+            document.getElementById("rock").disabled = true
+            document.getElementById("paper").disabled = true
+            document.getElementById("scissors").disabled = true
+            
+
+        } if (ComputerScore === 5) {
+            round_status_DOM.textContent = "YOU LOST, GOOD LUCK NEXT TIME I GUESS"
+            document.getElementById("rock").disabled = true
+            document.getElementById("paper").disabled = true
+            document.getElementById("scissors").disabled = true
+            
         }
     }
 
