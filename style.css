@@ -67,6 +67,7 @@ main {
     background: #33DDFF;
     border: 1px solid #33DDFF;
     color: #373E40;
+    cursor: pointer;
 }
 
 #round-status {
