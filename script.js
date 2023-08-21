@@ -59,19 +59,19 @@ reset_game_DOM.addEventListener("click", function() {
     function win(PlayerSelection,ComputerSelection) {
         PlayerScore++
         player_score_DOM.textContent = PlayerScore
-        round_status_DOM.textContent = PlayerSelection + " beats " + ComputerSelection + " you won this round"
+        round_status_DOM.textContent = PlayerSelection + " beats " + ComputerSelection + ", you won this round"
         getWinner(PlayerScore, ComputerScore) 
     }
 
     function lose(PlayerSelection,ComputerSelection) {
         ComputerScore++
         pc_score_DOM.textContent = ComputerScore
-        round_status_DOM.textContent = ComputerSelection + " beats " + PlayerSelection + " you lost this round"
+        round_status_DOM.textContent = ComputerSelection + " beats " + PlayerSelection + ", you lost this round"
         getWinner(PlayerScore, ComputerScore)
     }
 
     function draw() {
-        round_status_DOM.textContent = "You draw with the computer this round"
+        round_status_DOM.textContent = "It's a draw"
     }
 
     function getWinner(PlayerScore, ComputerScore) {
